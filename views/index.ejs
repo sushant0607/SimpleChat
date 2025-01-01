@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <% for (chat of chats) { %>
+     <div class="chat-box">
+        <p>From: <%= chat.from %> </p>
+        <div class="msg-box">
+            <p>Message: <%= chat.msg %></p>
+        </div>
+        <p>Recieved by: <%= chat.to %> </p>
+     </div>
+     <hr>
+    <% } %>
 </body>
 </html>

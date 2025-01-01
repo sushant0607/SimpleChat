@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const chatScheme = new mongoose.Schema({
+const chatSchema = new mongoose.Schema({
     from: {
         type: String,
         required: true
@@ -11,14 +11,16 @@ const chatScheme = new mongoose.Schema({
     },
     msg: {
         type: String,
+        required: true, // Add this to ensure `msg` is always present
         maxLength: 50
     },
     created_at: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now // Use default to auto-set timestamps
     }
-})
+});
 
-const Chat = mongoose.model("chat", chatScheme);
+const Chat = mongoose.model("Chat", chatSchema); // Capitalize model name for consistency
 
 module.exports = Chat;
