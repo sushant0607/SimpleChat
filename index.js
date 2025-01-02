@@ -7,6 +7,7 @@ const Chat = require("./models/chats.js")
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public"))); //public folder use karne ke liye
+app.use(express.urlencoded({extended: true})); //url se directly data lene ke liye
 
 main()
 .then(() => {
@@ -33,9 +34,29 @@ app.get("/chats/new", (req,res) => {
   res.render("new.ejs");
 })
 
+//create route
+app.post("/chats", (req, res) => {
+  let { from, to, message } = req.body;
+  let newChat = new Chat({
+    from: from,
+    to: to,
+    msg: message,
+    created_at: new Date()
+  });
+  newChat
+  .save()
+  .then(res => {  //jaha par then use hota hai waha await use karne ki jarurat nahi hoti
+    console.log("save hogaya bhai");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+  res.redirect("/chats");
+});
+
 app.get("/", (req, res)=>{
     res.send("root chal raha hai bhai");
-})
+});
 
 app.listen(8080, () => {
     console.log("Listening on port 8080");
