@@ -21,6 +21,6 @@ const chatSchema = new mongoose.Schema({
     }
 });
 
-const Chat = mongoose.model("Chat", chatSchema); // Capitalize model name for consistency
+const Chat = mongoose.model("Chat", chatSchema); 
 
 module.exports = Chat;

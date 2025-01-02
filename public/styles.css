@@ -1,14 +1,15 @@
+body {
+    background-color: #8f9091;
+    padding: 20px;
+    color: #2c3e50;
+}
+
+
 body, h1, h3, p, button, form, textarea {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-}
-
-body {
-    background-color: #8f9091;
-    padding: 20px;
-    color: #2c3e50;
 }
 
 h1, h3 {
@@ -62,7 +63,7 @@ button:hover {
 }
 
 .chat i {
-    color: #7f8c8d;
+    color: #000000;
 }
 
 .msg-box {

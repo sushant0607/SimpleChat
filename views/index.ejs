@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chat Box</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <h1>All Chats!</h1>
@@ -20,6 +20,10 @@
                 <p><%= chat.msg %></p>
                 <form method="GET" action="/chats/<%= chat._id %>/edit">
                     <button>Edit</button>
+                </form>
+                <br>
+                <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                    <button>Delete</button>
                 </form>
             </div>
             <p>Recieved by: <i> <%= chat.to %></i> </p>
