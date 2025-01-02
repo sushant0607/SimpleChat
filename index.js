@@ -13,7 +13,7 @@ app.use(methodOverride("_method"));
 
 main()
 .then(() => {
-console.log("connection hogaya bhai")
+console.log("connection done");
 })
 .catch(err => console.log(err));
 
