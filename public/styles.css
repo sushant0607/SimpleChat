@@ -1,3 +1,19 @@
-.chat-box {
+.body {
+    margin-left: 10px;
+}
+.chat {
     background-color: aliceblue;
+    padding: 20px;
+    border-radius: 16px;
+    
+}
+.chat-box {
+    display:flex;
+    flex-wrap: wrap;
+}
+.msg-box{
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 16px;
 }
