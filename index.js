@@ -91,7 +91,7 @@ app.put("/chats/:id", async (req,res) => {
 
 
 app.get("/", (req, res)=>{
-    res.send("root chal raha hai bhai");
+    res.send("root is working");
 });
 
 app.listen(8080, () => {
